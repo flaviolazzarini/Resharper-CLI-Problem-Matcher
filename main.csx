@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 Console.WriteLine("Hello world!");
 XmlDocument doc = new XmlDocument();
 doc.Load("temp.xml");
+// convert to JSON since XMLSerializer throws CLS Exception
 string json = JsonConvert.SerializeObject(doc);
 
 var test = JsonConvert.DeserializeObject<Root>(json);
